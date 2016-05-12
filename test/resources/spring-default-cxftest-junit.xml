@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://cxf.apache.org/core
+        http://cxf.apache.org/schemas/core.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd">
+    <bean id="cxfService" class="com.ufida.hap.cxf.CXFService"
+        factory-bean="cxfServiceF" factory-method="create" />
+
+    <bean id="cxfServiceF" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+        <!-- 
+         <property name="address"
+            value="http://10.170.10.59:8081/g3_bs/services/webserver" />
+         -->
+        <!-- <property name="address" value="http://58.18.134.178:9080/RHIP_Interface/services/webserver"/> -->
+        <!-- <property name="address" value="http://172.16.2.68:9080/RHIP_Interface/services/webserver"/> -->
+        <property name="address" value="http://localhost:8080/g3_bs/services/webserver"/>
+        <property name="serviceClass" value="com.ufida.hap.cxf.CXFService"></property>
+        <property name="outInterceptors">
+            <list>
+                <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+                <bean class="com.ufida.hap.test.webservice.support.AddSoapHeader"></bean>
+                <bean class="com.ufida.xsecret.soap.interceptor.HeaderIntercepter"></bean>
+            </list>
+        </property>
+        <property name="inInterceptors">
+            <list>
+                <bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+                <bean class="com.ufida.hap.test.webservice.support.ReadSoapHeader"></bean>
+            </list>
+        </property>
+    </bean>
+    
+    
+    
+    <bean id="doServer" class="com.anyi.web.sys.webservices.orbwebserver"
+        factory-bean="doServerF" factory-method="create" />
+
+    <bean id="doServerF" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+        <!-- 
+         <property name="address"
+            value="http://10.170.10.59:8081/g3_bs/services/webserver" />
+         -->
+        <!-- <property name="address" value="http://58.18.134.178:9080/RHIP_Interface/services/webserver"/> -->
+        <!-- <property name="address" value="http://172.16.2.68:9080/RHIP_Interface/services/webserver"/> -->
+        <!-- <property name="address" value="http://chenzhf.xicp.net:10001/services/orbwebserver"/> -->
+        <!-- <property name="address" value="http://localhost:8080/szyb/services/orbwebserver"/> -->
+        <property name="address" value="http://218.17.222.232:9080/services/orbwebserver"/>
+        
+        <property name="serviceClass" value="com.anyi.web.sys.webservices.orbwebserver"></property>
+        <property name="outInterceptors">
+            <list>
+                <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+                <!-- <bean class="com.ufida.hap.test.webservice.support.AddSoapHeader"></bean> -->
+            </list>
+        </property>
+        <property name="inInterceptors">
+            <list>
+                <bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+                <!-- <bean class="com.ufida.hap.test.webservice.support.ReadSoapHeader"></bean> -->
+            </list>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cxf="http://cxf.apache.org/core" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://cxf.apache.org/core
+        http://cxf.apache.org/schemas/core.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<bean id="cxf" class="org.apache.cxf.bus.CXFBusImpl">
+		<property name="inInterceptors">
+			<list>
+				<bean class="org.apache.cxf.interceptor.LoggingInInterceptor"></bean>
+				<!-- <ref bean="gwInterceptor"/> -->				
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="readSoapHeader" class="com.yonyou.ws.interceptors.ReadSoapHeader"
+		/>
+		
+	<bean id="addSoapHeader" class="com.yonyou.ws.interceptors.AddSoapHeader"/>
+	<!-- <bean id="gwInterceptor" class="com.yonyou.h.util.GatewayInInterceptor" /> -->
+	<bean id="proxyFactory" class="com.yonyou.proxy.jws.factory.JwsProxyFactoryImpl"/>
+	
+	<bean id="proxyServiceBean" class="com.yonyou.proxy.jws.services.JwsProxyServiceImpl" 
+			p:proxyFactory-ref="proxyFactory"/>	 
+
+	<jaxws:server id="proxyService" address="/proxy" 
+			serviceClass="com.yonyou.proxy.jws.services.JwsProxyService">
+		<jaxws:serviceBean>
+			<ref bean="proxyServiceBean"/>
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+		  <ref bean="readSoapHeader"/>
+		</jaxws:inInterceptors>	
+	</jaxws:server>
+			
+</beans>

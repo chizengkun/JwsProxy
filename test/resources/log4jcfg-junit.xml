@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="STDOUT" class="org.apache.log4j.FileAppender">
+		<param name="File" value="System.out"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%c:%L - %m%n"/> 
+		</layout>
+	</appender>
+	<appender name="ResourceOneLog" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:\\My Project\\roee\\jakarta-tomcat-4.1.24\\webapps\\ROOT\\WEB-INF\\ResourceOneEEHome\\roee.log"/>
+		<param name="MaxFileSize" value="100KB"/>
+		<param name="Append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%t] %C{2} (%l) - %m\n"/>
+		</layout>
+	</appender>
+	<appender name="stderr" class="org.apache.log4j.FileAppender">
+		<param name="File" value="System.err"/>
+		<param name="Append" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%t] %C{2} (%F.%M:%L) - %m\n"/>
+		</layout>
+	</appender>
+	<appender name="NTUser" class="org.apache.log4j.nt.NTEventLogAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n"/>
+		</layout>
+	</appender>
+	<category name="com.icss.sieaf">
+		<priority value="debug"/>
+	</category>
+	<root>
+		<priority value="warn"/>
+		<appender-ref ref="CONSOLE"/>
+	</root>
+</log4j:configuration>

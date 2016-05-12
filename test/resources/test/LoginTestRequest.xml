@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by SHOCK 
+	(SHOCK) -->
+<root rsFilePath="D:/TEMP/msg/dic/">
+	<task name="登录点1" login="true" disabled="false">
+		<xmldata><![CDATA[<ROOT><SQBM>4403041107</SQBM><USER>05</USER><PWD>1</PWD></ROOT>]]></xmldata>
+	</task>
+	
+ <task name="SZ0467" description="SZ0467" disabled="true"
+		checkError="false" print="true" saveFile="false">
+		<actionid>SZ0467</actionid>
+		<xmldata><![CDATA[<ROOT><SFZH>44030419801101101X</SFZH></ROOT>]]></xmldata>
+	</task>  
+	<!-- ca -->
+	<!-- <task name="RHIP01" description="RHIP01" disabled="false"
+		checkError="true" print="true" saveFile="false">
+		<actionid>RHIP01</actionid>
+		<xmldata><![CDATA[<ROOT><SYSID>PHS</SYSID><ORGID>150400.10</ORGID><IDCARD>152622194605262518</IDCARD><SFZJLX>2.16.156.112557.1.1.100.1</SFZJLX></ROOT>]]></xmldata>
+	</task>
+
+	<task name="登录点1" login="true" disabled="true">
+		<xmldata><![CDATA[<ROOT><USER>WB1002</USER><PWD>000000</PWD></ROOT>]]></xmldata>
+	</task>
+	<task name="200010" description="选业务机构" disabled="true"
+		checkError="false" print="true">
+		<actionid>200010</actionid>
+		<xmldata><![CDATA[<ROOT><ORGCODE>3211831002</ORGCODE></ROOT>]]></xmldata>
+	</task>
+
+	<task name="ziptest" description="ziptest" disabled="true" checkError="true" 
+		print="true" saveFile="false"> <actionid>ziptest</actionid> <xmldata><![CDATA[<ROOT><a>aaaaajflsdlkfjlksjkldfjlksjflklksdjflkjlk</a></ROOT>]]></xmldata> 
+		</task>
+	<task name="204018" description="204018" disabled="true"
+		checkError="false" print="true" saveFile="false">
+		<actionid>204018</actionid>
+		<xmldata><![CDATA[<?xml version="1.0"?>
+<ROOT><DATASET NAME="ZY_HSLSYZ"><ROW TYPE="UPDATE"><PKZYHSLSYZ0>194401</PKZYHSLSYZ0><LOCALID></LOCALID><FKZYBH0>2690</FKZYBH0><SQBM>3211831701</SQBM><BQID>51647</BQID><KSID>51624</KSID><YF></YF><CS>1</CS><RYCS>1</RYCS><KYZRQ>41570</KYZRQ><KYZSJ>59194</KYZSJ><KYZYSID>1563</KYZYSID><KYZYSMC>孔祥富</KYZYSMC><LRHSID>262</LRHSID><LRHSMC>郭庄管理员</LRHSMC><JDHSID>0</JDHSID><JDHSMC></JDHSMC><FSRQ>0</FSRQ><FSSJ>0</FSSJ><FYFS></FYFS><STATE>0</STATE><LX>0</LX><TS>0</TS><ZXSM></ZXSM><PKZYHSLSYZ1>199741</PKZYHSLSYZ1><YZBMID>1001714</YZBMID><TYBM>100002</TYBM><XH>0</XH><YL>1</YL><DJ>26</DJ><FYLB>23</FYLB><CLLB>0</CLLB><ZL>1</ZL><BZ>0</BZ><BYFS>0</BYFS><ZXKS></ZXKS><YZMC>胶片</YZMC><YZLX>3</YZLX><YJXMBM></YJXMBM><YJXMMC></YJXMMC><ISZB>0</ISZB><YZYLDWLX>0</YZYLDWLX><YZYLDW></YZYLDW><YZZLDWLX>0</YZZLDWLX><YZZLDW></YZZLDW><JL>0</JL><YZBM>100002</YZBM><GG></GG><BZGG></BZGG><YLDW></YLDW><JLDW></JLDW><JXLB></JXLB><JFFS></JFFS><GRTS></GRTS><ISBDYZXD>0</ISBDYZXD><BZDW></BZDW></ROW></DATASET></ROOT>
+]]></xmldata>
+	</task>
+
+
+	<task name="204015" description="204015" disabled="true"
+		checkError="true" print="true" saveFile="true">
+		<actionid>204015</actionid>
+		<xmldata><![CDATA[<ROOT><DATASET NAME="ZY_HSCQYZ">
+		    <ROW TYPE="UPDATE"><PKZYHSCQYZ0>180</PKZYHSCQYZ0><LOCALID>
+		    </LOCALID><FKZYBH0>5723</FKZYBH0><SQBM>1000000000</SQBM><BQID>2606</BQID><KSID>2611</KSID><YF>2</YF><CS>1</CS>
+		    <RYCS>1</RYCS><KYZRQ>41606</KYZRQ><KYZSJ>58942</KYZSJ><KYZYSID>5061</KYZYSID><KYZYSMC>医生</KYZYSMC><LRHSID>5061</LRHSID>
+		    <LRHSMC>医生</LRHSMC><JDHSID>6353</JDHSID><JDHSMC>护士</JDHSMC><TYZRQ>99999</TYZRQ><TYZSJ>0</TYZSJ><TYZYSID>0</TYZYSID>
+		    <TYZYSMC></TYZYSMC><TYZHSID>0</TYZHSID><TYZHSMC></TYZHSMC><FSRQ>41606</FSRQ><FSSJ>59438</FSSJ><SCCS>1</SCCS>
+		    <SCSL>1</SCSL><MCCS>0</MCCS><MCSL>0</MCSL><BYCS>0</BYCS><BYSL>0</BYSL><FYFS>0</FYFS><STATE>2</STATE>
+		    <ZXSM></ZXSM><PKZYHSCQYZ1>22459</PKZYHSCQYZ1><YZBMID>267628</YZBMID><TYBM>1030000068</TYBM><XH>0</XH><YL>3</YL>
+		    <DJ>0.1</DJ><FYLB>2</FYLB><CLLB>0</CLLB><ZL>1</ZL><BZ>30</BZ><BYFS>0</BYFS><ZXKS>2629</ZXKS><YZMC>葡萄糖5%100ml</YZMC>
+		    <YZLX>0</YZLX><YJXMBM></YJXMBM><YJXMMC></YJXMMC><ISZB>0</ISZB><YZYLDWLX>0</YZYLDWLX><YZYLDW>g</YZYLDW>
+		    <YZZLDWLX>0</YZZLDWLX><YZZLDW>瓶</YZZLDW><JL>5</JL><YZBM>1030000068</YZBM><GG>5g/瓶</GG><BZGG>30瓶/箱</BZGG>
+		    <YLDW>g</YLDW><JLDW>瓶</JLDW><JXLB></JXLB><GRTS>0</GRTS><JFFS>0</JFFS><SEL></SEL><BZDW>箱</BZDW></ROW>
+		    <ROW TYPE="ADD">
+		    <PKZYHSCQYZ0>180</PKZYHSCQYZ0><LOCALID></LOCALID><FKZYBH0>5723</FKZYBH0><SQBM>1000000000</SQBM><BQID>2606</BQID>
+		    <KSID>2611</KSID><YF>2</YF><CS>1</CS><RYCS>1</RYCS><KYZRQ>41607</KYZRQ><KYZSJ>47220</KYZSJ><KYZYSID>5061</KYZYSID>
+		    <KYZYSMC>医生</KYZYSMC><LRHSID>5061</LRHSID><LRHSMC>医生</LRHSMC><JDHSID></JDHSID><JDHSMC></JDHSMC><TYZRQ>99999</TYZRQ>
+		    <TYZSJ></TYZSJ><TYZYSID></TYZYSID><TYZYSMC></TYZYSMC><TYZHSID></TYZHSID><TYZHSMC></TYZHSMC><FSRQ>0</FSRQ><FSSJ>0</FSSJ>
+		    <SCCS>1</SCCS><SCSL>1</SCSL><MCCS>0</MCCS><MCSL>0</MCSL><BYCS></BYCS><BYSL>0</BYSL><FYFS>0</FYFS><STATE>0</STATE>
+		    <ZXSM></ZXSM><PKZYHSCQYZ1>22459</PKZYHSCQYZ1><YZBMID>63046</YZBMID><TYBM>1010000245</TYBM><XH>0</XH><YL>10</YL>
+		    <DJ>0.8</DJ><FYLB>2</FYLB><CLLB>0</CLLB><ZL>1</ZL><BZ>30</BZ><BYFS>0</BYFS><ZXKS>2629</ZXKS><YZMC>多潘立酮片</YZMC>
+		    <YZLX>0</YZLX><YJXMBM></YJXMBM><YJXMMC></YJXMMC><ISZB>0</ISZB><YZYLDWLX>0</YZYLDWLX><YZYLDW>mg</YZYLDW>
+		    <YZZLDWLX>0</YZZLDWLX><YZZLDW>片</YZZLDW><JL>10</JL><YZBM>1010000245</YZBM><GG>10mg/片</GG><BZGG>30片/盒</BZGG>
+		    <YLDW>mg</YLDW><JLDW>片</JLDW><JXLB>0</JXLB><GRTS>0</GRTS><JFFS>0</JFFS><SEL>0</SEL><BZDW>盒</BZDW></ROW></DATASET></ROOT>
+]]></xmldata>
+	</task> -->
+	<!-- <task name="203014" description="获取计费医嘱明细" disabled="true" checkError="true" 
+		print="true" saveFile="true"> <actionid>203014</actionid> <xmldata><![CDATA[ 
+		<ROOT> <PKZYBH0>1</PKZYBH0> <JSRQ>45444</JSRQ> <JSSJ>45444</JSSJ> </ROOT>]]></xmldata> 
+		</task> -->
+	<!-- <task name="203015" description="保存住院结算" disabled="true" checkError="true" 
+		print="true" saveFile="true"> <actionid>203015</actionid> <xmldata><![CDATA[ 
+		<ROOT> <PKZYBH0>123123</PKZYBH0> <MXJLS>2</MXJLS> <ZFY>20</ZFY> <JSRQ>45444</JSRQ> 
+		<JSSJ>45444</JSSJ> <DATASET NAME="ZY_FYMASTER"> <ROW TYPE="ADD"> <PKZYKFYMASTER>1</PKZYKFYMASTER> 
+		<FKZYBH0>123123</FKZYBH0> <SQBM>1</SQBM> <FYKSRQ>1</FYKSRQ> <FYKSSJ>1</FYKSSJ> 
+		<FYJSRQ>1</FYJSRQ> <FYJSSJ>1</FYJSSJ> <JSRQ>1</JSRQ> <JSSJ>1</JSSJ> <FPH>1</FPH> 
+		<RJID>1</RJID> <JSLX>1</JSLX> <STATE>1</STATE> <CZRYXM>1</CZRYXM> <CZRYID>1</CZRYID> 
+		<CZID>1</CZID> </ROW> </DATASET> <DATASET NAME="ZY_FYDETAIL"> <ROW TYPE="ADD"> 
+		<PKZYFYDETAIL>1</PKZYFYDETAIL> <FKZYMASTER>1</FKZYMASTER> <SQBM>1</SQBM> 
+		<KSID>1</KSID> <YSID>1</YSID> <HSFF>2</HSFF> <FYLB>2</FYLB> <FYLBMC>2</FYLBMC> 
+		<FY>2</FY> </ROW> <ROW TYPE="ADD"> <PKZYFYDETAIL>1</PKZYFYDETAIL> <FKZYMASTER>1</FKZYMASTER> 
+		<SQBM>1</SQBM> <KSID>1</KSID> <YSID>1</YSID> <HSFF>2</HSFF> <FYLB>2</FYLB> 
+		<FYLBMC>2</FYLBMC> <FY>2</FY> </ROW> </DATASET> <DATASET NAME="FP_SYMX"> 
+		<ROW TYPE="ADD"> <PKFPSYMX>1</PKFPSYMX> <SQBM>1</SQBM> <JSID>1</JSID> <RJID>2</RJID> 
+		<CZRQ>2</CZRQ> <CZSJ>2</CZSJ> <FPH>2</FPH> <CZRYXM>2</CZRYXM> <CZRYID>2</CZRYID> 
+		<LX>2</LX> <LY>3</LY> </ROW> </DATASET> </ROOT>]]></xmldata> </task> -->
+	<!-- <task name="203020" description="保存重打发票信息" disabled="true" checkError="true" 
+		print="true" saveFile="true"> <actionid>203020</actionid> <xmldata><![CDATA[ 
+		<ROOT> <JSID>1</JSID> <ZFFPH>45444</ZFFPH> <FPH>45444</FPH> </ROOT>]]></xmldata> 
+		</task> -->
+	<!-- task name="203026" description="住院收费日结" disabled="true" checkError="true" 
+		print="true" saveFile="true"> <actionid>203026</actionid> <xmldata><![CDATA[ 
+		<ROOT> <RYID>1</RYID> </ROOT>]]></xmldata> </task -->
+</root>

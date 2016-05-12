@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<!-- 		<property name="url" value="jdbc:oracle:thin:@${jdbc.url}" />
+		<property name="username" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.ps}" />
+ -->	
+ <property name="url" value="jdbc:oracle:thin:@chenzhf.xicp.net:3521:orcl" />
+		<property name="username" value="g2_sp4_jr" />
+		<property name="password" value="manager" />
+ 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+	<bean id="sessionFactory" class="com.ufida.hap.hibernate.AnnotationSessionFactory">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="hibernate.autoReconnect">true</prop>
+				<prop key="hibernate.transaction.auto_close_session">false</prop>
+			</props>
+		</property>
+
+		<!-- Entity files. -->
+		<property name="annotatedClassesLocations">
+			<list>
+				<value>com.ufida.hap.module.sample.domain</value>
+			</list>
+		</property>
+		<property name="mappingPathMatching">
+			<list>
+				<value>classpath*:/com/ufida/**/hbm/xml/*.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="transactionManager" class="com.ufida.hap.hibernate.HapHibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="supportBeanId" value="hibernateDaoSupport"></property>
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED"
+				rollback-for="com.ufida.hap.core.exception.AppException" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* com.ufida.test..*.*(..))"
+			id="g3ServiceMethod" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="g3ServiceMethod" />
+	</aop:config>
+	<!-- <bean id="CodeBS" class="com.ufida.hap.service.CodeBSImpl" /> <bean 
+		id="CacheBS" class="com.ufida.hap.service.CacheBSImpl" /> <bean id="ImageSourceBS" 
+		class="com.ufida.hap.service.ImageSourceBSImpl" /> -->
+	<bean id="hibernateDaoSupport" class="com.ufida.hap.hibernate.HibernateDaoSupportImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="abstractHibernateRepository" class="com.ufida.hap.hibernate.AbstractHibernateRepository"
+		abstract="true">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="queryService" class="com.ufida.test.QueryServiceImpl">
+	</bean>
+
+	<!-- <bean id="ssoService" class="com.ufida.hap.SSOUserInfoServiceImpl" 
+		/> -->
+	<!-- <bean id="ssoConfigLoader" class="com.ufida.hap.context.sso.HapdSSOConfigLoader" 
+		/> -->
+	<!-- <bean id="sysLoader" class="com.ufida.g3.util.G3SystemLoader" /> -->
+	<!-- <bean id="HapLog" class="com.ufida.hap.webservice.cxf.logging.HapLogServiceConsoleImpl" 
+		/> -->
+</beans>
